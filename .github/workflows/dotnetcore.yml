@@ -31,6 +31,7 @@ jobs:
         dockerfile: ./src/Web/Dockerfile
 
   deploy:
+
     needs: build
     name: Deploy App
     runs-on: ubuntu-latest
