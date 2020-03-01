@@ -30,3 +30,16 @@ jobs:
         registry: ${{ secrets.ACR_REGISTRY }}
         # Use dockerfile when you would like to explicitly build a Dockerfile
         dockerfile: ./src/Web/Dockerfile
+
+  deploy:
+    
+    needs: build
+    name: Deploy App
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: deploy to azure web app
+      uses: azure/appservice-actions/webapp@master
+      with: 
+        app-name: mynewestwebapplication
+        publish-profile: ${{ secrets.azureWebAppPublishProfile }}
