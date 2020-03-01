@@ -4,7 +4,6 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -32,7 +31,6 @@ jobs:
         dockerfile: ./src/Web/Dockerfile
 
   deploy:
-    
     needs: build
     name: Deploy App
     runs-on: ubuntu-latest
