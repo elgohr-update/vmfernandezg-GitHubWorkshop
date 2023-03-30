@@ -17,7 +17,7 @@ jobs:
     - name: Test with dotnet
       run: dotnet test ./eShopOnWeb.sln --configuration Release
     - name: Publish Docker
-      uses: elgohr/Publish-Docker-Github-Action@2.12
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         # The name of the image you would like to push
         name: pruebasacr.azurecr.io/eshopwebmvc
